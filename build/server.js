@@ -2549,7 +2549,7 @@ module.exports =
                       _react2.default.createElement(
                         'h4',
                         { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
+                        'Traffic'
                       ),
                       _react2.default.createElement(
                         'p',
@@ -2558,7 +2558,7 @@ module.exports =
                           'small',
                           { className: 'text-muted' },
                           _react2.default.createElement('i', { className: 'fa fa-clock-o' }),
-                          ' 11 hours ago via Twitter'
+                          ' 11 hours ago'
                         )
                       )
                     ),
@@ -2568,7 +2568,7 @@ module.exports =
                       _react2.default.createElement(
                         'p',
                         null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.'
+                        ' High turn-out at San Jose Restaurants. Back A Yard, Tandoori Grill.'
                       )
                     )
                   )
@@ -2590,7 +2590,7 @@ module.exports =
                       _react2.default.createElement(
                         'h4',
                         { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
+                        'Trending Coupon'
                       )
                     ),
                     _react2.default.createElement(
@@ -2599,12 +2599,7 @@ module.exports =
                       _react2.default.createElement(
                         'p',
                         null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.'
-                      ),
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.'
+                        'Popular Coupons: Sweet Mango, ID:01BC.'
                       )
                     )
                   )
@@ -2626,7 +2621,7 @@ module.exports =
                       _react2.default.createElement(
                         'h4',
                         { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
+                        'Updates'
                       )
                     ),
                     _react2.default.createElement(
@@ -2635,7 +2630,7 @@ module.exports =
                       _react2.default.createElement(
                         'p',
                         null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.'
+                        'Updated Vendor Phone number change.'
                       )
                     )
                   )
