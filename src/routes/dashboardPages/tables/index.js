@@ -1,12 +1,12 @@
 import React from 'react';
-import Table from './Table';
+import VendorTable from './Table';
 
 export default {
 
-  path: '/table',
+  path: '/vendors',
 
   action() {
-    return <Table />;
+    return VendorTable ;
   },
 
 };

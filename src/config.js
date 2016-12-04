@@ -14,6 +14,12 @@ export const host = process.env.WEBSITE_HOSTNAME || `localhost:${port}`;
 
 export const databaseUrl = process.env.DATABASE_URL || 'sqlite:database.sqlite';
 
+//RDS related details
+export const rdsUrl = 'mydbinstance.cum1koe02itt.us-east-1.rds.amazonaws.com';
+export const rdsUserName = 'cmpe280';
+export const rdsPwd = 'abcd1234';
+export const rdsPort = '3306';
+
 export const analytics = {
 
   // https://analytics.google.com/

@@ -11,7 +11,6 @@ import {
 
 import s from './Home.css';
 import StatWidget from '../../components/Widget';
-import Donut from '../../components/Donut';
 
 import {
   Tooltip,
@@ -46,21 +45,21 @@ function Home(props, context) {
         <div className="col-lg-3 col-md-6">
           <StatWidget
             style="panel-primary"
-            icon="fa fa-comments fa-5x"
-            count="26"
-            headerText="New Comments!"
+            icon="fa fa-users fa-5x"
+            count="304"
+            headerText="Users"
             footerText="View Details"
-            linkTo="/"
+            linkTo="/customers"
           />
         </div>
         <div className="col-lg-3 col-md-6">
           <StatWidget
             style="panel-green"
-            icon="fa fa-tasks fa-5x"
+            icon="fa fa-cutlery fa-5x"
             count="12"
-            headerText="New Tasks!"
+            headerText="Restaurant Partners"
             footerText="View Details"
-            linkTo="/"
+            linkTo="/vendors"
           />
         </div>
         <div className="col-lg-3 col-md-6">
@@ -68,7 +67,7 @@ function Home(props, context) {
             style="panel-yellow"
             icon="fa fa-shopping-cart fa-5x"
             count="124"
-            headerText="New Orders!"
+            headerText="Orders!"
             footerText="View Details"
             linkTo="/"
           />
@@ -76,76 +75,17 @@ function Home(props, context) {
         <div className="col-lg-3 col-md-6">
           <StatWidget
             style="panel-red"
-            icon="fa fa-support fa-5x"
+            icon="fa fa-ticket fa-5x"
             count="13"
-            headerText="Support Tickets!"
+            headerText="Coupons"
             footerText="View Details"
-            linkTo="/"
+            linkTo="/panelwells"
           />
         </div>
       </div>
 
       <div className="row">
         <div className="col-lg-8">
-
-          <Panel
-            header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Area Chart Example
-              <div className="pull-right">
-                <DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton1" >
-                  <MenuItem eventKey="1">Action</MenuItem>
-                  <MenuItem eventKey="2">Another action</MenuItem>
-                  <MenuItem eventKey="3">Something else here</MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">Separated link</MenuItem>
-                </DropdownButton>
-              </div>
-            </span>}
-          >
-            <div>
-              <ResponsiveContainer width="100%" aspect={2}>
-                <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <CartesianGrid stroke="#ccc" />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
-                  <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-                  <Area type="monotone" dataKey="amt" stackId="1" stroke="#ffc658" fill="#ffc658" />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-
-          </Panel>
-
-          <Panel
-            header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Bar Chart Example
-              <div className="pull-right">
-                <DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton2">
-                  <MenuItem eventKey="1">Action</MenuItem>
-                  <MenuItem eventKey="2">Another action</MenuItem>
-                  <MenuItem eventKey="3">Something else here</MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">Separated link</MenuItem>
-                </DropdownButton>
-              </div>
-            </span>}
-          >
-            <div>
-              <ResponsiveContainer width="100%" aspect={2}>
-                <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
-                  <CartesianGrid stroke="#ccc" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="pv" stackId="1" fill="#8884d8" />
-                  <Bar dataKey="uv" stackId="1" fill="#82ca9d" />
-                  <Bar type="monotone" dataKey="amt" fill="#ffc658" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </Panel>
 
           <Panel
             header={<span>
@@ -229,11 +169,11 @@ function Home(props, context) {
                 <span className="pull-right text-muted small"><em>4 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-twitter fa-fw" /> 3 New Followers
+                <i className="fa fa-shopping-cart fa-fw" /> New order placed
                 <span className="pull-right text-muted small"><em>12 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-envelope fa-fw" /> Message Sent
+                <i className="fa fa-cutlery fa-fw" /> New vendor registered
                 <span className="pull-right text-muted small"><em>27 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
@@ -245,10 +185,6 @@ function Home(props, context) {
                 <span className="pull-right text-muted small"><em>11:32 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-bolt fa-fw" /> Server Crashed!
-                <span className="pull-right text-muted small"><em>11:13 AM</em></span>
-              </ListGroupItem>
-              <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
                 <i className="fa fa-warning fa-fw" /> Server Not Responding
                 <span className="pull-right text-muted small"><em>10:57 AM</em></span>
               </ListGroupItem>
@@ -257,21 +193,10 @@ function Home(props, context) {
                 <span className="pull-right text-muted small"><em>9:49 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-money fa-fw" /> Payment Received
+                <i className="fa fa-money fa-fw" /> Coupons redeemed
                 <span className="pull-right text-muted small"><em>Yesterday</em></span>
               </ListGroupItem>
             </ListGroup>
-            <Button block>View All Alerts</Button>
-          </Panel>
-
-          <Panel
-            header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Donut Chart Example
-            </span>}
-          >
-            <div>
-              <Donut data={data} color="#8884d8" innerRadius="70%" outerRadius="90%" />
-            </div>
           </Panel>
 
         </div>

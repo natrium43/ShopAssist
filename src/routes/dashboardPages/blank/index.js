@@ -1,11 +1,10 @@
 import React from 'react';
-import Blank from './blank';
-
+import ChartsDashBoard from './blank'
 export default {
   path: '/blank',
 
   action() {
-    return <Blank />;
-  },
+    return ChartsDashBoard;
+  }
 
 };

@@ -7,6 +7,16 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 @import '../../components/variables.css';
+body {
+
+  background: no-repeat center center fixed;;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url('./Background1.png') ;
+}
 
 .root {
   padding-left: 20px;
@@ -154,4 +164,7 @@
   width: 100%;
   border-bottom: 1px solid #ddd;
   content: '';
+}
+.myBtn {
+  background-color: #B2EBF2;
 }

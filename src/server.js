@@ -20,8 +20,14 @@ import routes from './routes';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
 import { port, auth } from './config';
 
-const app = express();
 
+//Db services
+
+const app = express();
+// var backendCommentRoutes = require('./services/comments');
+// var backendCustomerRoutes = require('./services/customers');
+// var backendCouponRoutes = require('./services/coupons');
+var backendRoutes = require('./services/index')
 //
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
 // user agent is not known.
@@ -59,7 +65,7 @@ app.get('/login/facebook/return',
     res.redirect('/');
   }
 );
-
+app.use('/services', backendRoutes);
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
@@ -90,7 +96,7 @@ app.get('*', async (req, res, next) => {
         setMeta: (key, value) => (data[key] = value),
       },
       render(component, status = 200) {
-        // console.log('inside render of UniversalRouter', component);
+         console.log('inside render of UniversalRouter', component);
         css = new Set();
         statusCode = status;
         data.children = ReactDOM.renderToString(component);

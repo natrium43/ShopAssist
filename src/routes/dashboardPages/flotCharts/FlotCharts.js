@@ -42,6 +42,7 @@ const BarChartData = [
   { name: 'Page G', uv: 3490.2345678, pv: 4300, amt: 2100 },
 ];
 
+
 function displayFlotCharts(props, context) {
   context.setTitle(title);
   return (

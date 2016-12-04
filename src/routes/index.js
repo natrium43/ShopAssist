@@ -25,6 +25,7 @@ import panelwells from './dashboardPages/panelWells';
 import typography from './dashboardPages/typography';
 import blank from './dashboardPages/blank';
 import error from './error';
+import customertable from './dashboardPages/customers';
 
 import Header from '../components/Header';
 
@@ -50,6 +51,7 @@ export default [
 
   // keep in mind, routes are evaluated in order
     children: [
+     
       home,
       // contact,
       table,
@@ -64,17 +66,18 @@ export default [
       typography,
       // register,
       blank,
-
+      customertable,
       // place new routes before...
       // content,
       error,
     ],
 
     async action({ next, render, context }) {
-      // console.log('inside dashboard');
+       console.log('inside dashboard');
       const component = await next();
-      // console.log('inside dasdboard component', component);
+       console.log('inside dasdboard component', component);
       if (component === undefined) return component;
+      console.log("not undefined so rendering component");
       return render(
         <div>
           <Header />

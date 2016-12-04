@@ -1,96 +1,70 @@
 import React, { PropTypes } from 'react';
 import { Panel, Accordion, Well, Jumbotron, Button, Tabs, Tab, PageHeader } from 'react-bootstrap';
-
-
+import history from '../../../core/history';
 const title = 'PanelWells';
-
-
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import  '../../home/Home.css';
+//import  './PanelWells.css'
 function displayPanelWells(props, context) {
   context.setTitle(title);
   return (
     <div>
-      <div className="col-lg-12">
-        <PageHeader>Panels and Wells</PageHeader>
-      </div>
+      <div className="row">
 
+        <div className="col-lg-6">
+          <PageHeader>Coupons
+          </PageHeader>
+        </div>
+        <div className="col-lg-6 ">
+          <h3 className="col-sm-3 col-sm-offset-9 btn btn-primary " onClick={(e) => { e.preventDefault(); history.push('/panelwells/coupons');}}>
+
+
+            Add Coupon
+
+            <row>
+              
+            </row>
+
+
+        </h3>
+
+        </div>
+        <div className="col-lg-6">
+
+        </div>
+      </div>
       <div className="row">
         <div className="col-lg-4">
           <Panel
-            header={<span>Default Panel</span>}
-            footer={<span>Panel Footer</span>}
+            header={<span> BackAYard</span>} className="panel-primary"
+            footer={<span>Points needed: 800</span>}
           >
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt .
-                est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                fringilla augue.
+              <p>Free ripe plantains with an order of Curried Chicken. Can be substituted by a vegetarian Lentil Stew. Conditions apply.
               </p>
             </div>
           </Panel>
-        </div>
-        <div className="col-lg-4">
-          <Panel
-            header={<span>Primary Panel</span>} className="panel-primary"
-            footer={<span>Panel Footer</span>}
-          >
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                 est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                 fringilla augue.
-              </p>
-            </div>
-          </Panel>
-        </div>
-        <div className="col-lg-4">
-          <Panel
-            header={<span>Success Panel</span>} className="panel-success"
-            footer={<span>Panel Footer</span>}
-          >
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                fringilla augue.
-              </p>
-            </div>
-          </Panel>
-        </div>
-      </div>
 
-      <div className="row">
+        </div>
         <div className="col-lg-4">
           <Panel
-            header={<span>Info Panel</span>} className="panel-info"
-            footer={<span>Panel Footer</span>}
+            header={<span>Biriyaniz</span>}
+            footer={<span>Points needed: 400</span>}
           >
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                 est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                  fringilla augue.
+              <p>Get  50 % off on combo meals. Combo meals include one biriyani, a drink of choice and a starter of choice. Can only be redeemed once.
+                Conditions apply.
               </p>
             </div>
           </Panel>
         </div>
         <div className="col-lg-4">
           <Panel
-            header={<span>Warning Panel</span>} className="panel-warning"
-            footer={<span>Panel Footer</span>}
+            header={<span>Britania Arms Downtown</span>} className="panel-primary"
+            footer={<span>Points needed: 600</span>}
           >
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                fringilla augue.
-              </p>
-            </div>
-          </Panel>
-        </div>
-        <div className="col-lg-4">
-          <Panel
-            header={<span>Danger Panel</span>} className="panel-danger"
-            footer={<span>Panel Footer</span>}
-          >
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est
-                vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                fringilla augue.
+              <p>25 % off on Chorizo and eggs or eggs brit benedict. Additional 5% off on every purchase of mimosa. Applicable only at breakfast.Conditions Apply.
               </p>
             </div>
           </Panel>
@@ -100,26 +74,58 @@ function displayPanelWells(props, context) {
       <div className="row">
         <div className="col-lg-4">
           <Panel
-            header={<span>Green Panel</span>} className="panel-green"
-            footer={<span>Panel Footer</span>}
+            header={<span>China Chen</span>}
+            footer={<span>Points needed: 400</span>}
           >
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                 fringilla augue.
+              <p>25% off on Shrimp Crackers, Egg noodles , Mi Ga Quay, Mi Xao Don. Conditions apply.
               </p>
             </div>
           </Panel>
         </div>
         <div className="col-lg-4">
           <Panel
-            header={<span>Yellow Panel</span>} className="panel-yellow"
-            footer={<span>Panel Footer</span>}
+            header={<span>Taiwan Restaurant</span>} className="panel-info"
+            footer={<span>Points needed: 1000</span>}
           >
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt
-                est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-                fringilla augue.
+              <p>50% off on the second purchase of Special Family Dinner. Only one entree per person. Conditions apply.
+              </p>
+            </div>
+          </Panel>
+        </div>
+        <div className="col-lg-4">
+          <Panel
+            header={<span>Spice Palate</span>} className="panel-info"
+            footer={<span>Points needed: 1000</span>}
+          >
+            <div>
+              <p>Free delivery of 2 Lunch Box specials. Includes 3 rotis, dal and a curry. Cannot be clubbed with other coupons. Conditions apply.
+              </p>
+            </div>
+          </Panel>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-lg-4">
+          <Panel
+            header={<span>Kabab and Currys</span>} className="panel-info"
+            footer={<span>Points needed: 1000</span>}
+          >
+            <div>
+              <p>25% off on purchase of 6 garlic naans or 25% discount on second purchase of Tandoori Fish. Conditions Apply
+              </p>
+            </div>
+          </Panel>
+        </div>
+        <div className="col-lg-4">
+          <Panel
+            header={<span>Bertucellis La Villa</span>} className="panel-yellow"
+            footer={<span>Points needed: 700</span>}
+          >
+            <div>
+              <p>Get 1 Daily lunch plate free on an order exceeding 30$. 10% off on Zucchini Mushroom Frittata. Conditions Apply.
               </p>
             </div>
           </Panel>
@@ -138,204 +144,39 @@ function displayPanelWells(props, context) {
           </Panel>
         </div>
       </div>
-
-      <div className="row">
-        <div className="col-lg-12">
-          <Panel header={<span>Collapsible Accordion Panel Group</span>} >
-            <Accordion>
-              <Panel
-                header={
-                  <h4 className="panel-title">
-                      Collapsible Group Item #1
-                  </h4>
-                } eventKey="1"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                 culpa qui officia deserunt mollit anim id est laborum.
-              </Panel>
-              <Panel
-                header={
-                  <h4 className="panel-title">
-                      Collapsible Group Item #2
-                  </h4>
-                } eventKey="2"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                 culpa qui officia deserunt mollit anim id est laborum.
-              </Panel>
-              <Panel
-                header={
-                  <h4 className="panel-title">
-                      Collapsible Group Item #3
-                  </h4>
-                } eventKey="3"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                 culpa qui officia deserunt mollit anim id est laborum.
-              </Panel>
-            </Accordion>
-          </Panel>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-lg-6">
-          <Panel header={<span>Basic Tabs</span>} >
-            <Tabs id="tabs1" defaultActiveKey={1}>
-              <Tab eventKey={1} title="Home">
-                <h4>Home Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={2} title="Profile">
-                <h4>Profile Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={3} title="Messages">
-                <h4>Messages Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={4} title="Settings">
-                <h4>Settings Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-            </Tabs>
-          </Panel>
-        </div>
-
-        <div className="col-lg-6">
-          <Panel header={<span>Pill Tabs</span>} >
-            <Tabs id="tabs2" bsStyle="pills" defaultActiveKey={1}>
-              <Tab eventKey={1} title="Home">
-                <h4>Home Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={2} title="Profile">
-                <h4>Profile Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={3} title="Messages">
-                <h4>Messages Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-              <Tab eventKey={4} title="Settings">
-                <h4>Settings Tab</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </Tab>
-            </Tabs>
-          </Panel>
-        </div>
-      </div>
-
       <div className="row">
         <div className="col-lg-4">
-          <Well>
-            <h4>Normal Well</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-          </Well>
+          <Panel
+            header={<span>Sweet Mango</span>} className="panel-green"
+            footer={<span>Points needed: 500</span>}
+          >
+            <div>
+              <p>10% discount on select Appetizers. 10% discount on General Tsos Chicken and Crispy Chicken with Banana. Conditions Apply.
+              </p>
+            </div>
+          </Panel>
         </div>
         <div className="col-lg-4">
-          <Well bsSize="large">
-            <h4>Large Well</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-          </Well>
+          <Panel
+            header={<span>Souvlakis Greek Skewers</span>} className="panel-yellow"
+            footer={<span>Points needed: 1500</span>}
+          >
+            <div>
+              <p>Free Pork Gyros Souvlaki or 50% discount on Souvlaki Special or Souvlaki Plate. Conditions Apply.
+              </p>
+            </div>
+          </Panel>
         </div>
         <div className="col-lg-4">
-          <Well bsSize="small">
-            <h4>Small Well</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-          </Well>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-lg-12">
-          <Jumbotron>
-            <h1>Jumbotron</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est
-              vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et,
-              fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.
-            </p>
-            <p><Button bsStyle="primary" bsSize="large">Learn more</Button></p>
-          </Jumbotron>
+          <Panel
+            header={<span>Louisiana Bistro</span>} className="panel-red"
+            footer={<span>Points needed: 700</span>}
+          >
+            <div>
+              <p>Free Zydeco Caesar's salad or Salad de cafe. 25% off on Jerk Chicken PO'Boy or Sampler Platter. Conditions Apply
+              </p>
+            </div>
+          </Panel>
         </div>
       </div>
 
@@ -346,4 +187,6 @@ function displayPanelWells(props, context) {
 
 displayPanelWells.contextTypes = { setTitle: PropTypes.func.isRequired };
 
+
+//export default withStyles(s)(displayPanelWells);
 export default displayPanelWells;

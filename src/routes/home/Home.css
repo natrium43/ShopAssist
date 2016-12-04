@@ -37,3 +37,6 @@
 .newsDesc {
   display: block;
 }
+.top-buffer {
+  margin-top: 50px;
+}

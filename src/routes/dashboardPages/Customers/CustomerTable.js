@@ -8,53 +8,26 @@ import Pagination from 'react-bootstrap/lib/Pagination';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import Well from 'react-bootstrap/lib/Well';
 import 'whatwg-fetch'
-const title = 'VendorTable';
+const title = 'CustomerTable';
 
 
-class VendorTable extends React.Component {
+class CustomerTable extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {tableData: [], activePage: 1};
-    // this.handleSelect(eventKey);
+    this.state = {tableData: []};
+
     this.setInitialState();
 
   }
-  handleSelect(eventKey) {
-    var self = this;
-    console.log("Handle select called" + eventKey);
-     self.setState({activePage: eventKey});
-    var query = {};
-    query['page'] = eventKey;
 
-    var request = new Request('http://localhost:3001/services/vendors/getVendors', {
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
-    });
-
-    fetch(request, {
-      method: 'post',
-      body: JSON.stringify({
-        page: eventKey
-      })
-    }).then((response) => {
-      return response.json()
-    }).then((json) => {
-      this.tableData = json.doc;
-      this.setState({tableData: this.tableData})
-      console.log("SET TABLE STATE: "+this.tableData);
-    }).catch(function (ex) {
-      console.log('parsing failed in getBilling', ex);
-    })
-  }
   setInitialState() {
-    fetch(`http://localhost:3001/services/vendors/getVendors`, {
-      method: 'get',
-
+    fetch(`http://localhost:3001/services/customers/getCustomers`, {
+      method: 'get'
     }).then((response) => {
       return response.json()
     }).then((json) => {
+      console.log('parsed json', json)
       this.tableData = json;
       this.setState({tableData: this.tableData})
     }).catch(function (ex) {
@@ -65,19 +38,19 @@ class VendorTable extends React.Component {
 
   render() {
     var x = this.state.tableData.map(function(d, index){
-      return <tr><td>{d.vendor_id}</td><td>{d.vendor_name}</td><td>{d.vendor_location}</td></tr>
+      return <tr><td>{d.cust_id}</td><td>{d.cust_fname}</td><td>{d.cust_lname}</td><td>{d.cust_phn}</td><td>{d.cust_email}</td></tr>
     });
     return (
       <div>
         <div className="row">
 
           <div className="col-lg-12">
-            <PageHeader>Vendors</PageHeader>
+            <PageHeader>Customers</PageHeader>
           </div>
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <Panel header={<span>Vendor Details</span>}>
+            <Panel header={<span>Customer Details</span>}>
               <div>
                 <div className="dataTable_wrapper">
                   <div
@@ -117,7 +90,7 @@ class VendorTable extends React.Component {
                               aria-sort="ascending"
                               style={{ width: 265 }}
                             >
-                              ID
+                               ID
                             </th>
                             <th
                               className="sorting"
@@ -128,7 +101,7 @@ class VendorTable extends React.Component {
                               aria-label="Browser: activate to sort column ascending"
                               style={{ width: 321 }}
                             >
-                              Vendor Name
+                               First Name
                             </th>
                             <th
                               className="sorting"
@@ -139,9 +112,29 @@ class VendorTable extends React.Component {
                               aria-label="Platform(s): activate to sort column ascending"
                               style={{ width: 299 }}
                             >
-                              Vendor Location
+                              Last Name
                             </th>
-
+                            <th
+                              className="sorting"
+                              tabIndex="0"
+                              aria-controls="dataTables-example"
+                              rowSpan="1"
+                              colSpan="1"
+                              aria-label="Engine version: activate to sort column ascending"
+                              style={{ width: 231 }}
+                            >
+                             Phone Number
+                            </th>
+                            <th
+                              className="sorting"
+                              tabIndex="0"
+                              aria-controls="dataTables-example"
+                              rowSpan="1"
+                              colSpan="1"
+                              aria-label="CSS grade: activate to sort column ascending"
+                              style={{ width: 180 }}
+                            > Email ID
+                            </th>
                           </tr>
                           </thead>
                           <tbody>
@@ -161,17 +154,6 @@ class VendorTable extends React.Component {
                         </div>
                       </div>
                       <div className="col-sm-6 pullRight ">
-                        <Pagination
-                          activePage={this.state.activePage}
-                          items={3}
-                          first
-                          last
-                          prev
-                          next
-                          onSelect={(eventKey) => {
-                          this.handleSelect(eventKey);
-                          }}
-                        />
                       </div>
                     </div>
                   </div>
@@ -180,11 +162,11 @@ class VendorTable extends React.Component {
             </Panel>
           </div>
 
-        </div>
       </div>
+        </div>
     );
   }
 }
 
 // displayCustomerTable.contextTypes = { setTitle: PropTypes.func.isRequired };
-export default <VendorTable />;
+export default <CustomerTable />;
